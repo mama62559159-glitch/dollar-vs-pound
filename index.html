@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="تابع سعر الدولار مقابل الجنيه المصري وحوّل العملات بسهولة."
+    />
+    <meta name="theme-color" content="#f4f7f5" />
+    <title>دولار | سعر الدولار مقابل الجنيه المصري</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="دولار — الصفحة الرئيسية">
+          <span class="brand-mark" aria-hidden="true">$</span>
+          <span>دولار<span class="brand-dot">.</span></span>
+        </a>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="تفعيل الوضع الداكن"
+          title="تبديل الوضع"
+        >
+          <svg
+            class="theme-icon theme-icon--moon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M20.2 15.4A8.4 8.4 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" />
+          </svg>
+          <svg
+            class="theme-icon theme-icon--sun"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+            />
+          </svg>
+        </button>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> متابعة مباشرة</p>
+          <h1 id="page-title">سعر الدولار <span>اليوم</span></h1>
+          <p class="hero-description">
+            تابع قيمة الدولار مقابل الجنيه المصري، وحوّل المبلغ في ثوانٍ.
+          </p>
+        </div>
+        <div class="hero-decoration" aria-hidden="true">
+          <span class="decoration-circle decoration-circle--one"></span>
+          <span class="decoration-circle decoration-circle--two"></span>
+          <span class="decoration-dollar">$</span>
+        </div>
+      </section>
+
+      <section class="rate-card" aria-labelledby="rate-heading">
+        <div class="rate-card-top">
+          <div class="currency-pair">
+            <span class="currency-icon" aria-hidden="true">$</span>
+            <div>
+              <h2 id="rate-heading">الدولار الأمريكي</h2>
+              <p>USD <span class="pair-arrow" aria-hidden="true">←</span> EGP</p>
+            </div>
+          </div>
+          <span class="rate-badge"><span></span> سعر استرشادي</span>
+        </div>
+
+        <div class="rate-value-area" aria-live="polite">
+          <p class="rate-label">سعر الصرف الحالي</p>
+          <div class="rate-value">
+            <span id="rate-value">—</span>
+            <span class="rate-currency">ج.م</span>
+          </div>
+          <p class="rate-caption">لكل 1 دولار أمريكي</p>
+        </div>
+
+        <div class="rate-card-bottom">
+          <p class="updated-at" id="updated-at">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+            <span>جارٍ جلب آخر تحديث...</span>
+          </p>
+          <button class="refresh-button" id="refresh-button" type="button">
+            <svg class="refresh-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 7v5h-5M4 17v-5h5" />
+              <path d="M5.6 9a7 7 0 0 1 11.6-2L20 12M4 12l2.8 5a7 7 0 0 0 11.6-2" />
+            </svg>
+            <span>تحديث السعر</span>
+          </button>
+        </div>
+        <p class="source-note" id="source-note"></p>
+        <p class="fetch-message" id="fetch-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="converter-card" aria-labelledby="converter-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">احسبها بسهولة</p>
+            <h2 id="converter-title">محول العملات</h2>
+          </div>
+          <span class="converter-symbol" aria-hidden="true">⇄</span>
+        </div>
+
+        <div class="converter-fields">
+          <label class="amount-field" for="usd-amount">
+            <span class="field-label">المبلغ بالدولار</span>
+            <span class="input-wrap">
+              <input
+                id="usd-amount"
+                name="usd-amount"
+                type="number"
+                inputmode="decimal"
+                min="0"
+                step="any"
+                placeholder="0.00"
+                value="1"
+                autocomplete="off"
+              />
+              <span class="input-currency"><span class="currency-flag">🇺🇸</span> USD</span>
+            </span>
+          </label>
+
+          <div class="conversion-arrow" aria-hidden="true">↓</div>
+
+          <label class="amount-field" for="egp-amount">
+            <span class="field-label">المبلغ بالجنيه المصري</span>
+            <span class="input-wrap">
+              <input
+                id="egp-amount"
+                name="egp-amount"
+                type="number"
+                inputmode="decimal"
+                min="0"
+                step="any"
+                placeholder="0.00"
+                autocomplete="off"
+              />
+              <span class="input-currency"><span class="currency-flag">🇪🇬</span> EGP</span>
+            </span>
+          </label>
+        </div>
+        <p class="converter-hint" id="converter-hint">
+          أدخل أي مبلغ في أحد الحقلين لعرض قيمته بالعملة الأخرى.
+        </p>
+      </section>
+
+      <footer class="page-footer">
+        <p>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 3.8 7v5.2c0 4.6 3.4 7.8 8.2 9 4.8-1.2 8.2-4.4 8.2-9V7L12 3Z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          الأسعار مستمدة من المؤشرات المصرفية العالمية الرسمية وتختلف قليلاً بين البنوك.
+        </p>
+        <span>المعلومات لأغراض استرشادية فقط</span>
+      </footer>
+    </main>
+  </body>
+</html>
